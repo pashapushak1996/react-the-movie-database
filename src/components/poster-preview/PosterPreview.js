@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 export const PosterPreview = ({movieId, width, url, imageUrl, movieName}) => {
 
-    const imageSrs = imageUrlCreator(width, imageUrl);
+    const imageSrs = imageUrlCreator(imageUrl, width);
 
     return (
         url ?

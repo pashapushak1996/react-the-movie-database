@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 import {useEffect} from "react";
 import {getMoviesDetailsThunk} from "../../redux/reducers/movies-reducer";
-import {imageUrlCreator, dateToString} from "../../utils/helpers";
+import {dateToString, imageUrlCreator} from "../../utils/helpers";
 
 export const MovieInfo = () => {
 
@@ -23,7 +23,7 @@ export const MovieInfo = () => {
     return (
         movie &&
         <div className={ styles.item } style={ {
-            backgroundImage: `url("${ imageUrlCreator(500, movie.backdrop_path) }")`,
+            backgroundImage: `url("${ imageUrlCreator(movie.backdrop_path) }")`,
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover"
@@ -43,6 +43,9 @@ export const MovieInfo = () => {
                 <div>
                     <h4>Overview: </h4>
                     <p>{ movie.overview }</p>
+                </div>
+                <div>
+                    <img src={ imageUrlCreator(200, movie.production_companies[0].logo_path) } alt=""/>
                 </div>
             </div>
         </div>

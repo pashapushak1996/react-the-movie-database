@@ -1,7 +1,6 @@
 import {SET_IS_LOADING, SET_MOVIE, SET_MOVIES_LIST} from "../action-types";
 import {getGenres, getMovieDetails, getMoviesList} from "../../services";
-import {setIsLoading, setMovie, setMoviesList} from "../action-creators";
-import {setCurrentPageCreator, setTotalItemsCountCreator} from "../action-creators";
+import {setIsLoading, setMovie, setMoviesList, setTotalItemsCountCreator} from "../action-creators";
 
 
 const initialState = {
