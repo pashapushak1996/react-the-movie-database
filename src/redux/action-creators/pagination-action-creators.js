@@ -7,6 +7,8 @@ import {
 export const setCurrentPageCreator = (payload) => ({
     type: SET_CURRENT_PAGE, payload
 });
+
+
 export const setTotalItemsCountCreator = (payload) => ({
     type: SET_TOTAL_ITEMS_COUNT, payload
 });

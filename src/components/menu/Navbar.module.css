@@ -2,7 +2,6 @@
     display: flex;
     column-gap: 40px;
     align-items: center;
-    height: 50px;
 }
 
 .menu_item a {

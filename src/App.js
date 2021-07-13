@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {Header, MovieInfo, MoviesList, ThemeButton} from "./components";
 import {Route, Switch} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {getAllMoviesWithGenres} from "./redux/reducers/movies-reducer/movies-reducer";
+import {getAllMoviesWithGenres} from "./redux/reducers/movies-reducer";
 import {Preloader} from "./components/preloader/Preloader";
 
 //todo Зробити
@@ -30,22 +30,24 @@ function App() {
 
     useEffect(() => {
         getAllData(currPage);
+
     }, [currPage]);
 
 
     const toggleTheme = () => theme === 'light-mode' ? setTheme('dark-mode') : setTheme('light-mode');
 
     if (isLoading) {
-        return <Preloader/>
+        return <Preloader theme={ theme }/>
     }
+
     return (
         <div className={ theme }>
             <ThemeButton toggleTheme={ toggleTheme }/>
-            <Header getAllData={ getAllData } currPage={ currPage }/>
+            <Header/>
             <Switch>
                 <Route path={ `/movies/:id` } render={ (props) => <MovieInfo { ...props }/> }/>
                 <Route path={ `/movies` }
-                       render={ (props) => <MoviesList { ...props } moviesList={ moviesList || [] }/>
+                       render={ (props) => <MoviesList { ...props } moviesList={ moviesList }/>
                        }/>
             </Switch>
         </div>

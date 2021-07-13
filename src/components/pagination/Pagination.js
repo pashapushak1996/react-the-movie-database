@@ -1,7 +1,8 @@
 import React from "react";
 import Pagination from "react-js-pagination";
+import styles from './Pagination.module.css'
 import {useDispatch, useSelector} from "react-redux";
-import {setCurrentPageCreator} from "../../redux/action-creators/pagination-action-creators";
+import {setCurrentPageCreator} from "../../redux/action-creators/";
 
 
 export const Paginator = () => {
@@ -17,6 +18,7 @@ export const Paginator = () => {
     return (
         <div>
             <Pagination
+                innerClass={ styles.paginationBox }
                 itemClass="page-item"
                 linkClass="page-link"
                 activePage={ currPage }

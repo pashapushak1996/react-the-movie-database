@@ -1,21 +1,15 @@
-import {SET_MOVIES_LIST} from "../../action-types/movies-action-types";
-import {getGenres, getMovieDetails, getMoviesList} from "../../../services";
-import {setMoviesList} from "../../action-creators/movies-action-creators";
-import {setCurrentPageCreator, setTotalItemsCountCreator} from "../../action-creators/pagination-action-creators";
-
-const SET_MOVIE = "SET_MOVIE";
-const SET_IS_LOADING = "SET_IS_LOADING";
-
-
-const setMovie = (payload) => ({type: SET_MOVIE, payload});
-const setIsLoading = (payload) => ({type: SET_IS_LOADING, payload});
+import {SET_IS_LOADING, SET_MOVIE, SET_MOVIES_LIST} from "../action-types";
+import {getGenres, getMovieDetails, getMoviesList} from "../../services";
+import {setIsLoading, setMovie, setMoviesList} from "../action-creators";
+import {setCurrentPageCreator, setTotalItemsCountCreator} from "../action-creators";
 
 
 const initialState = {
     moviesList: [],
     movie: null,
     isLoading: false,
-}
+};
+
 
 export const moviesReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -49,9 +43,7 @@ export const getAllMoviesWithGenres = (currPage, genreId) => async (dispatch) =>
         dispatch(setTotalItemsCountCreator(total_results));
 
 
-        if (currPage === page) {
-            dispatch(setCurrentPageCreator(page));
-        }
+        console.log(page);
 
         const moviesWithGenres = results.map((movie) => {
             movie.movieGenres = genres.filter((genre) => movie.genre_ids.includes(genre.id));

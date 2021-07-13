@@ -1,27 +1,20 @@
 import React from 'react';
 import {Badge} from 'reactstrap';
 import styles from './GenreBadge.module.css';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    NavLink,
-    useHistory
-} from "react-router-dom";
-import {getAllMoviesWithGenres} from "../../redux/reducers/movies-reducer/movies-reducer";
+import {useHistory} from "react-router-dom";
+import {getAllMoviesWithGenres} from "../../redux/reducers/movies-reducer";
 import {useDispatch} from "react-redux";
+import {genreToClassName} from "../../utils/helpers";
 
 export const GenreBadge = ({genres}) => {
-
     const history = useHistory();
     const dispatch = useDispatch();
 
     return (<div className={ styles.container }>
             { genres && genres.map((genre) => {
-                const genreStyle = genre.name
-                    .replaceAll(' ', '')
-                    .toLowerCase();
+
+                const genreStyle = genreToClassName(genre);
+
                 return <Badge onClick={ () => {
                     dispatch(getAllMoviesWithGenres('', genre.id))
                     history.push(`/movies`)

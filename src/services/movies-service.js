@@ -17,11 +17,7 @@ const getMovieDetails = async (movieId) => {
 };
 
 const getMoviesByGenres = async (value = '') => {
-    const {data} = await axiosInstance.get(`/27/movie/horror`, {
-        params: {
-            query: value
-        }
-    });
+    const {data} = await axiosInstance.get(`/list/63`,);
     return data;
 }
 

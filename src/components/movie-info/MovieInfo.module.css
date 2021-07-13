@@ -4,6 +4,7 @@
     align-items: center;
     padding: 30px 0px;
     column-gap: 50px;
+    height: 100vh;
 }
 
 .item img {

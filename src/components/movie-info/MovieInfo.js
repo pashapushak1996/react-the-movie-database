@@ -4,8 +4,8 @@ import {GenreBadge} from "../genre-badge";
 import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 import {useEffect} from "react";
-import {getMoviesDetailsThunk} from "../../redux/reducers/movies-reducer/movies-reducer";
-import {imageUrlCreator, yearCreator} from "../../helpers/helpers";
+import {getMoviesDetailsThunk} from "../../redux/reducers/movies-reducer";
+import {imageUrlCreator, dateToString} from "../../utils/helpers";
 
 export const MovieInfo = () => {
 
@@ -33,9 +33,11 @@ export const MovieInfo = () => {
                            imageUrl={ movie.poster_path }
                            movieName={ movie.original_title }/>
             <div>
-                <h2>{ movie.original_title }
-                    <span> ({ yearCreator(movie.release_date) })</span>
-                </h2>
+                <h2>{ movie.original_title }</h2>
+                <div>
+                    <b>Release date: </b>
+                    <span>{ dateToString(movie.release_date) }</span>
+                </div>
                 <GenreBadge genres={ movie.genres }/>
                 <a href={ movie.homepage }>Link to watch</a>
                 <div>

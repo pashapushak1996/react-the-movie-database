@@ -1,10 +1,13 @@
-import {Menu} from "../menu";
+import {Navbar} from "../menu";
 import styles from './Header.module.css';
+import {UserInfo} from "./user-info/UserInfo";
 
-export const Header = ({getAllData}) => {
+export const Header = () => {
+
     return (
         <div className={ styles.header }>
-            <Menu getAllData={ getAllData }/>
+            <Navbar/>
+            <UserInfo/>
         </div>
     );
 };

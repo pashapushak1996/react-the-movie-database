@@ -1,2 +1,4 @@
 export const SET_MOVIES_LIST = "SET_MOVIES_LIST";
 export const CHANGE_SEARCH_VALUE = "CHANGE_SEARCH_VALUE";
+export const SET_MOVIE = "SET_MOVIE";
+export const SET_IS_LOADING = "SET_IS_LOADING";
