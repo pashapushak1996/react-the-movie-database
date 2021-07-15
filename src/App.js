@@ -38,7 +38,7 @@ function App() {
     return (
         <div className={ isDarkTheme ? 'darkMode' : 'lightMode' }>
             <Header genreId={ genreId }/>
-            <ThemeButton toggleTheme={ toggleTheme }/>
+            <ThemeButton isDarkTheme={ isDarkTheme } toggleTheme={ toggleTheme }/>
             <GenresContainer/>
             <Switch>
                 <Route path={ `/movies/:id` }
