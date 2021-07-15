@@ -4,12 +4,7 @@ import {PosterPreview} from "../poster-preview";
 import {GenreBadge} from "../genre-badge";
 import {Preloader} from "../preloader";
 
-export const MovieInfo = ({movie, isLoading}) => {
-
-    if (isLoading) {
-        return <Preloader/>
-    }
-
+export const MovieInfo = ({movie}) => {
     return (
         movie &&
         <div className={ styles.item } style={ dynamicBackgroundImageForElement(movie.backdrop_path) }>

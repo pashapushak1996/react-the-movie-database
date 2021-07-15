@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import {useEffect} from "react";
 import {getMoviesDetailsThunk} from "../../redux/";
 import {MovieInfo} from "./MovieInfo";
+import {Preloader} from "../preloader";
 
 
 export const MovieInfoContainer = () => {
@@ -16,8 +17,10 @@ export const MovieInfoContainer = () => {
     useEffect(() => {
         dispatch(getMoviesDetailsThunk(id));
     }, [id]);
-
+    if (isLoading) {
+        return <Preloader/>
+    }
     return (
-        <MovieInfo isLoading={ isLoading } movie={ movie }/>
+        <MovieInfo movie={ movie }/>
     );
 }
