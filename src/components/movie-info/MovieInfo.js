@@ -2,7 +2,7 @@ import styles from "./MovieInfo.module.css";
 import {dateToString, dynamicBackgroundImageForElement} from "../../utils/helpers";
 import {PosterPreview} from "../poster-preview";
 import {GenreBadge} from "../genre-badge";
-import {Preloader} from "../preloader/Preloader";
+import {Preloader} from "../preloader";
 
 export const MovieInfo = ({movie, isLoading}) => {
 

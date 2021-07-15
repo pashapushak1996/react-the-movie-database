@@ -1,4 +1,4 @@
-import {Preloader} from "../preloader/Preloader";
+import {Preloader} from "../preloader/";
 import {useSelector} from "react-redux";
 import {MoviesList} from "./MoviesList";
 
