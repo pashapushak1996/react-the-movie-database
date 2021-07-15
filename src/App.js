@@ -38,7 +38,6 @@ function App() {
             setIsDarkTheme(true);
             window.document.body.classList.add('darkMode');
         }
-        isDarkTheme ? window.document.body.classList.add('darkMode') : window.document.body.classList.remove('darkMode');
     }
 
     return (
