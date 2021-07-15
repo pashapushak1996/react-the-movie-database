@@ -1,11 +1,11 @@
 import loaderImage from '../../assets/images/LoaderImage.svg';
-import './Preloader.module.css';
+import styles from './Preloader.module.css';
 
 
-export const Preloader = ({theme}) => {
+export const Preloader = () => {
     return (
-        <div className={ theme }
-             style={ {display: 'flex', justifyContent: "center", alignItems: "center"} }>
+        <div className={ styles.preloader }>
+            <h1>Loading...</h1>
             <img src={ loaderImage } alt=""/>
         </div>
     );

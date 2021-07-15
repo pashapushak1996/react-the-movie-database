@@ -1,6 +1,13 @@
 import {SET_IS_LOADING, SET_MOVIE, SET_MOVIES_LIST} from "../action-types";
 import {getGenres, getMovieDetails, getMoviesList} from "../../services";
-import {setIsLoading, setMovie, setMoviesList, setTotalItemsCountCreator} from "../action-creators";
+import {
+    setCurrentPage,
+    setGenreId,
+    setIsLoading,
+    setMovie,
+    setMoviesList,
+    setTotalItemsCount
+} from "../action-creators";
 
 
 const initialState = {
@@ -21,6 +28,7 @@ export const moviesReducer = (state = initialState, action) => {
         case SET_IS_LOADING: {
             return {...state, isLoading: action.payload}
         }
+
         default:
             return state;
     }
@@ -29,20 +37,24 @@ export const moviesReducer = (state = initialState, action) => {
 
 //Thunk
 
-
 export const getAllMoviesWithGenres = (currPage, genreId) => async (dispatch) => {
+
+    if (genreId && !currPage) {
+        dispatch(setGenreId(genreId));
+        dispatch(setCurrentPage(1));
+    }
+
     try {
         dispatch(setIsLoading(true));
+
         const [{
-            value: {page, total_results, results}
+            value: {total_results, results}
         },
             {value: {genres}}] =
             await Promise.allSettled([getMoviesList(currPage, genreId), getGenres()]);
 
-        dispatch(setTotalItemsCountCreator(total_results));
+        dispatch(setTotalItemsCount(total_results));
 
-
-        console.log(page);
 
         const moviesWithGenres = results.map((movie) => {
             movie.movieGenres = genres.filter((genre) => movie.genre_ids.includes(genre.id));
@@ -59,6 +71,16 @@ export const getAllMoviesWithGenres = (currPage, genreId) => async (dispatch) =>
 };
 
 
+//Thunk
+
 export const getMoviesDetailsThunk = (id) => async (dispatch) => {
-    dispatch(setMovie(await getMovieDetails(id)));
+    try {
+        dispatch(setIsLoading(true));
+        dispatch(setMovie(await getMovieDetails(id)));
+    } catch (e) {
+
+    } finally {
+        dispatch(setIsLoading(false));
+    }
+
 };

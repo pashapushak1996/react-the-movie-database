@@ -7,12 +7,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -21,6 +15,13 @@ code {
 a {
     text-decoration: none;
     color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
 }
 
 

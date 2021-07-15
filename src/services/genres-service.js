@@ -1,12 +1,4 @@
 import {axiosInstance} from "./axios-config";
-//Action-types
-
-const SET_GENRES = "SET_GENRES";
-
-
-//Action creators
-
-const setGenres = (payload) => ({type: SET_GENRES, payload});
 
 
 const getGenres = async () => {
@@ -16,9 +8,4 @@ const getGenres = async () => {
 
 export {
     getGenres
-}
-
-export const setGenresThunk = () => async (dispatch) => {
-    const genres = await getGenres();
-    dispatch(setGenres(genres));
 }

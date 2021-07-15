@@ -68,6 +68,14 @@
     background-color: cornflowerblue;
 }
 
-.romance, .music, .tvmovie {
+.romance {
     background-color: lightcoral;
+}
+
+.music {
+    background-color: plum;
+}
+
+.tvmovie {
+    background-color: orangered;
 }

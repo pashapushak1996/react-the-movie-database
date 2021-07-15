@@ -7,7 +7,7 @@ export const StarsRating = ({movieRating}) => {
         <div className={ styles.rating }>
             <div>Rating { movieRating } of 10 stars</div>
             <Rating stars={ 10 } ratingValue={ movieRating } onClick={ (e) => {
-
+                //Create post request
             } }/>
         </div>
     );

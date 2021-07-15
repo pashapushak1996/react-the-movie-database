@@ -1,4 +1,4 @@
-import classes from './MovieListCard.module.css';
+import styles from './MovieListCard.module.css';
 import {PosterPreview} from "../poster-preview";
 import {GenreBadge} from "../genre-badge";
 import {StarsRating} from "../stars-rating";
@@ -8,8 +8,8 @@ import {dateToString} from "../../utils/helpers";
 export const MovieListCard = ({movie, url}) => {
 
     return (
-        <div className={ classes.movieItem }>
-            <div className={ classes.movieItem_image }>
+        <div className={ styles.movieItem }>
+            <div className={ styles.movieItem_image }>
                 { movie.poster_path && <PosterPreview movieId={ movie.id }
                                                       url={ url }
                                                       width={ 200 }

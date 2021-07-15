@@ -2,7 +2,7 @@ import React from "react";
 import Pagination from "react-js-pagination";
 import styles from './Pagination.module.css'
 import {useDispatch, useSelector} from "react-redux";
-import {setCurrentPageCreator} from "../../redux/action-creators/";
+import {setCurrentPage} from "../../redux/action-creators/";
 
 
 export const Paginator = () => {
@@ -12,8 +12,8 @@ export const Paginator = () => {
     const {currPage, totalItemsCount} = useSelector(({paginationReducer}) => paginationReducer);
 
     const handlePageChange = (pageNumber) => {
-        dispatch(setCurrentPageCreator(pageNumber));
-    }
+        dispatch(setCurrentPage(pageNumber));
+    };
 
     return (
         <div>

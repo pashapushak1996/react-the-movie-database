@@ -16,13 +16,8 @@ const getMovieDetails = async (movieId) => {
     return data;
 };
 
-const getMoviesByGenres = async (value = '') => {
-    const {data} = await axiosInstance.get(`/list/63`,);
-    return data;
-}
 
 export {
-    getMoviesByGenres,
     getMoviesList,
     getMovieDetails,
 }

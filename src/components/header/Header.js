@@ -1,12 +1,12 @@
-import {Navbar} from "../menu";
+import {Navbar} from "../navbar";
 import styles from './Header.module.css';
 import {UserInfo} from "./user-info/UserInfo";
 
-export const Header = () => {
+export const Header = ({genreId}) => {
 
     return (
         <div className={ styles.header }>
-            <Navbar/>
+            <Navbar genreId={ genreId }/>
             <UserInfo/>
         </div>
     );

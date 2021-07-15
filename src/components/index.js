@@ -1,4 +1,4 @@
-export * from './menu';
+export * from './navbar';
 export * from './header';
 export * from './genre-badge';
 export * from './movie-info';
@@ -8,3 +8,4 @@ export * from './poster-preview';
 export * from './stars-rating';
 export * from './theme-button';
 export * from './pagination';
+export * from './genres';
