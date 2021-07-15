@@ -31,15 +31,14 @@ function App() {
     }, [currPage]);
 
 
-    const toggleTheme = (isDarkTheme) => {
+    const toggleTheme = () => {
         isDarkTheme ? setIsDarkTheme(false) : setIsDarkTheme(true);
     }
 
     return (
         <div className={ isDarkTheme ? 'darkMode' : 'lightMode' }>
             <Header genreId={ genreId }/>
-            <ThemeButton isDarkTheme={ isDarkTheme }
-                         toggleTheme={ toggleTheme }/>
+            <ThemeButton toggleTheme={ toggleTheme }/>
             <GenresContainer/>
             <Switch>
                 <Route path={ `/movies/:id` }
