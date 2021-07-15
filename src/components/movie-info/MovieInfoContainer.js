@@ -17,9 +17,13 @@ export const MovieInfoContainer = () => {
     useEffect(() => {
         dispatch(getMoviesDetailsThunk(id));
     }, [id]);
+
+
     if (isLoading) {
         return <Preloader/>
     }
+
+
     return (
         <MovieInfo movie={ movie }/>
     );
