@@ -1,6 +1,6 @@
 import './App.css';
 import {useEffect, useState} from "react";
-import {Header, MoviesList, ThemeButton} from "./components";
+import {Header, ThemeButton} from "./components";
 import {useDispatch, useSelector} from "react-redux";
 import {getAllMoviesWithGenres} from "./redux/";
 import {GenresContainer} from "./components/";
