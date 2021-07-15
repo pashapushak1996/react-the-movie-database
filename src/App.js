@@ -31,11 +31,18 @@ function App() {
 
 
     const toggleTheme = () => {
-        isDarkTheme ? setIsDarkTheme(false) : setIsDarkTheme(true);
+        if (isDarkTheme) {
+            setIsDarkTheme(false);
+            window.document.body.classList.remove('darkMode');
+        } else {
+            setIsDarkTheme(true);
+            window.document.body.classList.add('darkMode');
+        }
+        isDarkTheme ? window.document.body.classList.add('darkMode') : window.document.body.classList.remove('darkMode');
     }
 
     return (
-        <div className={ isDarkTheme ? 'darkMode' : 'lightMode' }>
+        <div>
             <Header genreId={ genreId }/>
             <ThemeButton isDarkTheme={ isDarkTheme } toggleTheme={ toggleTheme }/>
             <GenresContainer/>
