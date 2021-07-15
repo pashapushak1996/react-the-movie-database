@@ -1,17 +1,8 @@
-import {MovieListCard} from "../movie-list-card";
-import styles from './MoviesList.module.css';
 import {Paginator} from "../pagination";
-import {Preloader} from "../preloader/Preloader";
-import {useSelector} from "react-redux";
+import styles from "./MoviesList.module.css";
+import {MovieListCard} from "../movie-list-card";
 
-
-export const MoviesList = ({moviesList, match: {url}, genreName}) => {
-
-    const isLoading = useSelector(({moviesReducer}) => moviesReducer.isLoading);
-
-    if (isLoading) {
-        return <Preloader/>
-    }
+export const MoviesList = ({genreName, moviesList, url}) => {
 
     return (
         <div>
@@ -27,6 +18,6 @@ export const MoviesList = ({moviesList, match: {url}, genreName}) => {
                     movie={ movie }/>) }</div>
         </div>
     );
-};
+}
 
 

@@ -1,10 +1,10 @@
 import './App.css';
 import {useEffect, useState} from "react";
-import {Header, MovieInfoContainer, MoviesList, ThemeButton} from "./components";
-import {Route, Switch} from "react-router-dom";
+import {Header, MoviesList, ThemeButton} from "./components";
 import {useDispatch, useSelector} from "react-redux";
 import {getAllMoviesWithGenres} from "./redux/";
 import {GenresContainer} from "./components/";
+import {Routes} from "./components/";
 
 function App() {
 
@@ -12,9 +12,8 @@ function App() {
 
     const dispatch = useDispatch();
 
-    const {moviesList, currPage, genreId, genreName} =
-        useSelector(({paginationReducer, moviesReducer, genresReducer}) =>
-            ({...paginationReducer, ...moviesReducer, ...genresReducer}));
+    const {currPage, genreId} = useSelector(({paginationReducer, genresReducer}) =>
+        ({...paginationReducer, ...genresReducer}));
 
 
     const getAllData = async (currPage, genreId) => {
@@ -40,19 +39,7 @@ function App() {
             <Header genreId={ genreId }/>
             <ThemeButton isDarkTheme={ isDarkTheme } toggleTheme={ toggleTheme }/>
             <GenresContainer/>
-            <Switch>
-                <Route path={ `/movies/:id` }
-                       render={ (props) =>
-                           <MovieInfoContainer { ...props }/>
-                       }/>
-                <Route path={ `/movies` }
-                       render={ (props) =>
-                           <MoviesList
-                               { ...props }
-                               genreName={ genreName }
-                               moviesList={ moviesList }/>
-                       }/>
-            </Switch>
+            <Routes/>
         </div>
     );
 }

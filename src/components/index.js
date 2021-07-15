@@ -9,3 +9,4 @@ export * from './stars-rating';
 export * from './theme-button';
 export * from './pagination';
 export * from './genres';
+export * from './routes';
