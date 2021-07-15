@@ -69,13 +69,12 @@ export const getAllMoviesWithGenres = (currPage, genreId) => async (dispatch) =>
 };
 
 
-//Thunk
 export const getMoviesDetailsThunk = (id) => async (dispatch) => {
     try {
         dispatch(setIsLoading(true));
         dispatch(setMovie(await getMovieDetails(id)));
     } catch (e) {
-
+        console.error(e);
     } finally {
         dispatch(setIsLoading(false));
     }
