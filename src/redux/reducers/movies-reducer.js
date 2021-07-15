@@ -47,11 +47,9 @@ export const getAllMoviesWithGenres = (currPage, genreId) => async (dispatch) =>
     try {
         dispatch(setIsLoading(true));
 
-        const [{
-            value: {total_results, results}
-        },
-            {value: {genres}}] =
-            await Promise.allSettled([getMoviesList(currPage, genreId), getGenres()]);
+        const [
+            {value: {total_results, results}},
+            {value: {genres}}] = await Promise.allSettled([getMoviesList(currPage, genreId), getGenres()]);
 
         dispatch(setTotalItemsCount(total_results));
 
@@ -72,7 +70,6 @@ export const getAllMoviesWithGenres = (currPage, genreId) => async (dispatch) =>
 
 
 //Thunk
-
 export const getMoviesDetailsThunk = (id) => async (dispatch) => {
     try {
         dispatch(setIsLoading(true));
