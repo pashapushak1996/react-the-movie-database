@@ -1,13 +1,11 @@
-import {Navbar} from "../navbar";
-import styles from './Header.module.css';
-import {UserInfo} from "./user-info/UserInfo";
+import {StyledHeader} from "./HeaderStyles";
 
-export const Header = ({genreId}) => {
-
+export const Header = ({children}) => {
     return (
-        <div className={ styles.header }>
-            <Navbar genreId={ genreId }/>
-            <UserInfo/>
-        </div>
+        <StyledHeader>
+            { children }
+        </StyledHeader>
     );
-};
+}
+
+

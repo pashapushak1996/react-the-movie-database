@@ -1,9 +1,0 @@
-.movieListItems {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    row-gap: 20px;
-    column-gap: 20px;
-    padding: 0px 10px;
-}

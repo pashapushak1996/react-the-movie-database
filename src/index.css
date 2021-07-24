@@ -12,18 +12,6 @@ code {
     monospace;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-
-body.darkMode {
-    background-color: #1a1919;
-    color: #f0f2f3;
-    height: 100%;
-    transition: background-color 0.25s ease-in-out;
-}
-
 * {
     margin: 0;
     padding: 0;

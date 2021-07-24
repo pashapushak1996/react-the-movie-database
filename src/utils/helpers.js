@@ -5,18 +5,8 @@ const dateToString = (string) => {
     return [day, month, year].join(' ');
 };
 
-const dynamicBackgroundImageForElement = (url) => ({
-    backgroundImage: `url("${ imageUrlCreator(url, 500) }")`,
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-});
-
-const genreToClassName = (genre) => genre.name.replaceAll(' ', '').toLowerCase();
 
 export {
-    dynamicBackgroundImageForElement,
     imageUrlCreator,
-    dateToString,
-    genreToClassName
+    dateToString
 }
