@@ -13,11 +13,8 @@ export const GenreBadge = ({genres}) => {
     const dispatch = useDispatch();
 
     return (<div className={ styles.container }>
-
             { genres.map((genre) => {
-
                 const genreClassName = genreToClassName(genre);
-
                 return <Badge
                     onClick={ () => {
                         dispatch(getAllMoviesWithGenres('', genre.id));
