@@ -1,29 +1,39 @@
-import {MainPage} from "./layouts/MainPage";
+import {MainContainer} from "./layouts/main-page/MainContainer";
 import {Header} from "./components/header/Header";
 import {UserInfo} from "./components/user-info/UserInfo";
 import {Navbar} from "./components/navbar/Navbar";
-import {SearchInput} from "./components/search-input/SearchInput";
-import {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {fetchMovies} from "./redux/reducers/moviesReducer";
+import {Route, Switch} from "react-router-dom";
+import {HomePage} from "./pages/main-page/HomePage";
+import {PopularMoviesList} from "./components/movies-list/PopularMoviesList";
+import {NowPlayingMoviesList} from "./components/movies-list/NowPlayingMoviesList";
+import {UpcomingMoviesList} from "./components/movies-list/UpcomingMoviesList";
+import {TopRatedMoviesList} from "./components/movies-list/TopRatedMoviesList";
 
 function App() {
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(fetchMovies())
-    }, [dispatch]);
-
-    const {movies} = useSelector(({movies}) => movies);
-
     return (
-        <MainPage>
+        <MainContainer>
             <Header>
                 <Navbar/>
-                <SearchInput/>
                 <UserInfo/>
             </Header>
-        </MainPage>
+            <Switch>
+                <Route exact path={ `/` }
+                       render={ () => <HomePage/> }/>
+                <Route path={ `/movie/now-playing` }
+                       render={ (props) =>
+                           <NowPlayingMoviesList { ...props }/> }/>
+                <Route path={ `/movie/upcoming` }
+                       render={ (props) =>
+                           <UpcomingMoviesList { ...props }/> }/>
+                <Route path={ `/movie/top-rated` }
+                       render={ (props) =>
+                           <TopRatedMoviesList { ...props }/> }/>
+                <Route path={ `/movie` }
+                       render={ (props) =>
+                           <PopularMoviesList { ...props }/>
+                       }/>
+            </Switch>
+        </MainContainer>
     );
 }
 

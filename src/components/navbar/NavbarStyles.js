@@ -1,7 +1,6 @@
-import {Navbar} from "react-bootstrap";
 import styled from "styled-components";
 
-export const StyledNavbar = styled(Navbar)`
+export const StyledNavbar = styled.nav`
   display: flex;
   column-gap: 30px;
   align-items: center;
@@ -10,15 +9,12 @@ export const StyledNavbar = styled(Navbar)`
 export const StyledDropdownMenu = styled.div`
   position: relative;
   padding: 2px 0;
-
-  a {
-    text-decoration: none;
-    color: white;
-  }
+  color: white;
 
   .dropdown_menu {
     display: none;
     position: absolute;
+    z-index: 1000;
     width: 150px;
     background-color: white;
     top: 25px;

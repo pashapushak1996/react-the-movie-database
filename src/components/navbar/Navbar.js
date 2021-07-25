@@ -10,11 +10,11 @@ export const Navbar = () => {
                 <Logo/>
             </Link>
             <StyledDropdownMenu>
-                <Link to={ `/movie` }>Movies</Link>
+                <span>Movies</span>
                 <div className={ `dropdown_menu` }>
                     <div
                         className={ `dropdown_menu_item` }>
-                        <Link to={ `/tv` }> Popular</Link>
+                        <Link to={ `/movie` }> Popular</Link>
                     </div>
                     <div className={ `dropdown_menu_item` }>
                         <Link to={ `/movie/now-playing` }>Now Playing</Link>
@@ -28,7 +28,7 @@ export const Navbar = () => {
                 </div>
             </StyledDropdownMenu>
             <StyledDropdownMenu>
-                <Link to={ `/tv` }>TV Shows</Link>
+                <span>TV Shows</span>
                 <div className={ `dropdown_menu` }>
                     <div
                         className={ `dropdown_menu_item` }>
@@ -46,7 +46,7 @@ export const Navbar = () => {
                 </div>
             </StyledDropdownMenu>
             <StyledDropdownMenu>
-                <Link to={ `/person` }>People</Link>
+                <span>People</span>
                 <div className="dropdown_menu">
                     <div className="dropdown_menu_item">
                         <Link to={ `/person` }>Popular People</Link>

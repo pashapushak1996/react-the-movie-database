@@ -12,9 +12,8 @@ export const fetchMovies = () => async (dispatch) => {
     dispatch(setMovies(results));
 };
 
-
 const initialState = {
-    movies: []
+    movies: [],
 };
 
 
