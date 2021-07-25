@@ -4,7 +4,7 @@ const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NzgxMWQ1MTM2OTVlZTc4YWU3NWU0Yz
 
 
 export const axiosConfig = axios.create({
-    baseURL: 'https://api.themoviedb.org/3/',
+    baseURL: 'https://api.themoviedb.org/3',
     headers: {
         Authorization: `Bearer ${ API_KEY }`
     }
