@@ -1,6 +1,5 @@
 import {Navbar} from "react-bootstrap";
 import styled from "styled-components";
-import {Link} from "react-router-dom";
 
 export const StyledNavbar = styled(Navbar)`
   display: flex;
@@ -8,11 +7,14 @@ export const StyledNavbar = styled(Navbar)`
   align-items: center;
 `;
 
-export const StyledDropdownLink = styled(Link)`
+export const StyledDropdownMenu = styled.div`
   position: relative;
-  text-decoration: none;
-  color: white;
   padding: 2px 0;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 
   .dropdown_menu {
     display: none;
@@ -31,7 +33,7 @@ export const StyledDropdownLink = styled(Link)`
   }
 
   .dropdown_menu_item {
-    padding: 2px 0px;
+    padding: 2px 0;
     font-size: 15px;
 
     & a {

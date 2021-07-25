@@ -1,9 +1,11 @@
 import {StyledUserInfo} from "./StyledUserInfo";
+import profilePhoto from '../../assets/images/Avatar.jpg'
 
-export const UserInfo = ({children}) => {
+export const UserInfo = () => {
     return (
         <StyledUserInfo>
-            { children }
+            <img src={ profilePhoto } alt=""/>
+            <span>Pavlo Pushak</span>
         </StyledUserInfo>
     );
 }

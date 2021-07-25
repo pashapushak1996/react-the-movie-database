@@ -1,18 +1,20 @@
 import {Link} from "react-router-dom";
-import {StyledDropdownLink, StyledNavbar} from "./NavbarStyles";
+import {StyledDropdownMenu, StyledNavbar} from "./NavbarStyles";
 import {Logo} from "../../common/Logo";
 
 
 export const Navbar = () => {
     return (
         <StyledNavbar>
-            <Logo/>
-            <StyledDropdownLink to={ `/movie` }>
-                <span>Movies</span>
+            <Link to={ `/` }>
+                <Logo/>
+            </Link>
+            <StyledDropdownMenu>
+                <Link to={ `/movie` }>Movies</Link>
                 <div className={ `dropdown_menu` }>
                     <div
                         className={ `dropdown_menu_item` }>
-                        Popular
+                        <Link to={ `/tv` }> Popular</Link>
                     </div>
                     <div className={ `dropdown_menu_item` }>
                         <Link to={ `/movie/now-playing` }>Now Playing</Link>
@@ -24,13 +26,13 @@ export const Navbar = () => {
                         <Link to={ `/movie/top-rated` }>Top rated</Link>
                     </div>
                 </div>
-            </StyledDropdownLink>
-            <StyledDropdownLink to={ `/tv` }>
-                <span>TV Shows</span>
+            </StyledDropdownMenu>
+            <StyledDropdownMenu>
+                <Link to={ `/tv` }>TV Shows</Link>
                 <div className={ `dropdown_menu` }>
                     <div
                         className={ `dropdown_menu_item` }>
-                        Popular
+                        <Link to={ `/tv` }> Popular</Link>
                     </div>
                     <div className={ `dropdown_menu_item` }>
                         <Link to={ `/tv/airing-today` }>Airing today</Link>
@@ -42,15 +44,15 @@ export const Navbar = () => {
                         <Link to={ `/tv/top-rated` }>Top rated</Link>
                     </div>
                 </div>
-            </StyledDropdownLink>
-            <StyledDropdownLink to={ `/person` }>
-                <span>People</span>
+            </StyledDropdownMenu>
+            <StyledDropdownMenu>
+                <Link to={ `/person` }>People</Link>
                 <div className="dropdown_menu">
                     <div className="dropdown_menu_item">
-                        Popular People
+                        <Link to={ `/person` }>Popular People</Link>
                     </div>
                 </div>
-            </StyledDropdownLink>
+            </StyledDropdownMenu>
         </StyledNavbar>
     );
 }
